@@ -1,0 +1,15 @@
+{
+  "name": "nrc-dynamic-data",
+  "version": "1.0.0",
+  "description": "Dynamic data faker to mock data from Run Tracking App",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jashaul",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.0.0",
+    "jest": "^27.5.1"
+  }
+}
