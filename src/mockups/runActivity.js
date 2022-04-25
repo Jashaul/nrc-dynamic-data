@@ -1,5 +1,5 @@
 // mockup of the running activity object
-export const runActivity = {
+module.exports = {
     runName: "Tuesday Evening Run",
     totalDistance: 3.84,
     distanceUnits: 'km',

@@ -1,5 +1,5 @@
 const data = require("./src/runActivityObject");
-const { runActivity } = require("./src/mockups/");
+const runActivity = require("./src/mockups/runActivity");
 
 // Mock of Data Object
 console.log(runActivity);
