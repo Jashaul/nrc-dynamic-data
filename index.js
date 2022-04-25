@@ -1,3 +1,8 @@
 const data = require("./src/runActivityObject");
+const { runActivity } = require("./src/mockups/");
 
-console.log(data)
+// Mock of Data Object
+console.log(runActivity);
+
+// Dynamic running activity Object
+console.log(data);

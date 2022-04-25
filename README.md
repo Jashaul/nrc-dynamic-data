@@ -1,6 +1,7 @@
-# `nrc-data`
+# `NRC-DATA`
 
 > Mockup datamodules for Run Tracking App datasources
+Mockup data of running activity from apps such as Nike Run Club or Strava
 
 ## Usage
 
@@ -11,7 +12,6 @@ Dataobjects:
 ```
 // CJS/Node
 
-const {runActivity} =require("@prifina/nrc-data/mockups");
-const NRC =require("@prifina/nrc-data"); // All objects...
+const {runActivity} =require("@nrc-dynamic-data/src/runActivityObject");
 
 ```

@@ -1,3 +1,4 @@
+// mockup of the running activity object
 export const runActivity = {
     runName: "Tuesday Evening Run",
     totalDistance: 3.84,

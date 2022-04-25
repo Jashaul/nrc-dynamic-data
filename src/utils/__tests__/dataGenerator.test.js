@@ -5,17 +5,17 @@ test('getRandomInt', () => {
     const max = 10;
     const val = utils.getRandomInt(min, max);
     
-    expect(val).not.toBeNull();
+    // checking if value is an integer and within range
     expect(typeof val).toBe('number');
+    expect(val%1).toBe(0);
     expect(val).toBeGreaterThan(4);
     expect(val).toBeLessThan(11);
-    expect(val%1).toBe(0);
 });
 
 test('getRandBool', () => {
     const val = utils.getRandBool();
 
-    expect(val).not.toBeNull();
+    // checking if value is of type boolean
     expect(typeof val).toBe('boolean');
 });
 
@@ -24,25 +24,24 @@ test('getRandomFloat', () => {
     const max = 6;
     const val = utils.getRandomFloat(min, max);
     
-    expect(val).not.toBeNull();
+    // checking if value is a float and within range
     expect(typeof val).toBe('number');
+    expect(val%1).not.toBe(0);
     expect(val).toBeGreaterThan(4);
     expect(val).toBeLessThan(7);
-    expect(val%1).not.toBe(0);
-
 });
 
 test('getName', () => {
     const val = utils.getName();
 
-    expect(val).not.toBeNull();
+    // checking if value is of type string
     expect(typeof val).toBe('string');
 });
 
 test('getdistanceUnits', () => {
     const val = utils.getdistanceUnits();
 
-    expect(val).not.toBeNull();
+    // checking if value is of type string and if it's km or mi
     expect(typeof val).toBe('string');
     expect(['km', 'mi']).toContain(val);
 });
@@ -50,7 +49,7 @@ test('getdistanceUnits', () => {
 test('getPace', () => {
     const val = utils.getPace(utils.getdistanceUnits());
     
-    expect(val).not.toBeNull();
+    // checking if value is of type integer
     expect(typeof val).toBe('number');
     expect(val%1).toBe(0);
 });
@@ -58,7 +57,7 @@ test('getPace', () => {
 test('getBurnedCal', () => {
     const val = utils.getBurnedCal( utils.getRandomFloat(1, 20), utils.getdistanceUnits());
     
-    expect(val).not.toBeNull();
+    // checking if value is of type integer
     expect(typeof val).toBe('number');
     expect(val%1).toBe(0);
 });
@@ -66,6 +65,7 @@ test('getBurnedCal', () => {
 test('getStartTime', () => {
     const time = utils.getStartTime();
 
+    // checking if value is of type object
     expect(typeof time).toBe('object');
     expect(!Array.isArray(time)).toBeTruthy();
     expect(time).not.toBeNull();
@@ -79,10 +79,12 @@ test('getSplits', () => {
     const elevation = utils.getRandomInt(0, 40);
     const splits = utils.getSplits(totalDist, totalDuration, averagePace, elevation);
 
-    expect(Array.isArray(splits)).toBeTruthy();
-    expect(!Array.isArray(splits[0])).toBeTruthy();
+    // checking if value is an arry of objects
     expect(typeof splits).toBe('object');
-    expect(splits).not.toBeNull();
+    expect(Array.isArray(splits)).toBeTruthy();
     expect(splits.length).toBeGreaterThan(0);
-    expect(Object.keys(splits[0]).length).not.toBe(0);
+    for (val in splits) {
+        expect(!Array.isArray(val)).toBeTruthy();
+        expect(Object.keys(val).length).not.toBe(0);
+    }
 });
